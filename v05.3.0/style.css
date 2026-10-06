@@ -18,6 +18,7 @@ html {
   .swiper {
     width: 100%;
     overflow: visible;
+    position: relative;
 
     .swiper-slide {
       --color: hsl(
