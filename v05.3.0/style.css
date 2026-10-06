@@ -1,0 +1,46 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  font-size: 1rem;
+}
+.container {
+  width: min(100%, 900px);
+  margin-inline: auto;
+}
+
+.sample {
+  .swiper {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+
+    .swiper-slide {
+      --color: hsl(
+        calc((sibling-index() - 1) * 360deg / sibling-count()) 100% 50%
+      );
+
+      width: 400px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: color-mix(
+        in oklch,
+        var(--color) 80%,
+        contrast-color(var(--color))
+      );
+      /* color: color-mix(in oklch, var(--color) 80%, #0000); */
+      background: hsl(
+        calc((sibling-index() - 1) * 360deg / sibling-count()) 100% 80%
+      );
+    }
+  }
+}
